@@ -58,8 +58,8 @@ class BeParkGarageDoor implements DynamicPlatformPlugin {
     const params = `coordinate%5Blat%5D=${this.config.latitude}&coordinate%5Blng%5D=${this.config.longitude}&pedestrian=1&purchase_id=${this.config.purchase_id}&user_id=${this.config.user_id}&way=pedestrian`;
     return this.performRequest(`/api/v3/gate/${this.config.gate_id}/open?${params}`, 'POST');
   }
-
-  private async performRequest(endpoint: string, method: string = 'GET', body: any = null): Promise<any> {
+  
+  private async performRequest(endpoint: string, method = 'GET', body: any = null): Promise<any> {
     await this.ensureAuthenticated();
 
     const response = await fetch(`${API_BASE_URL}${endpoint}`, {
