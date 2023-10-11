@@ -1,16 +1,53 @@
 {
-  "pluginAlias": "ExampleHomebridgePlugin",
+  "pluginAlias": "BeParkGarageDoor",
   "pluginType": "platform",
-  "singular": true,
-  "schema": {
-    "type": "object",
-    "properties": {
-      "name": {
-        "title": "Name",
-        "type": "string",
-        "required": true,
-        "default": "Example Dynamic Platform"
-      }
+  "singular": "BePark Garage Door",
+  "plural": "BePark Garage Doors",
+  "settings": [
+    {
+      "field": "platform",
+      "value": "BeParkGarageDoor",
+      "type": "hidden"
+    },
+    {
+      "field": "name",
+      "default": "BeParkGarageDoor",
+      "required": true,
+      "type": "text",
+      "label": "Name",
+      "placeholder": "BeParkGarageDoor"
+    },
+    {
+      "field": "username",
+      "default": "",
+      "required": true,
+      "type": "text",
+      "label": "Username",
+      "placeholder": "Enter your BePark username"
+    },
+    {
+      "field": "password",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "label": "Password",
+      "placeholder": "Enter your BePark password"
+    },
+    {
+      "field": "client_secret",
+      "default": "",
+      "required": true,
+      "type": "password",
+      "label": "Client Secret",
+      "placeholder": "Enter your BePark client secret"
+    },
+    {
+      "field": "autoCloseDuration",
+      "default": 5,
+      "required": true,
+      "type": "number",
+      "label": "Auto-close Duration (seconds)",
+      "placeholder": "Time in seconds to auto-close the door"
     }
-  }
+  ]
 }
