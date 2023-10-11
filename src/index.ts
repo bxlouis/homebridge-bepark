@@ -1,17 +1,16 @@
-import { API, DynamicPlatformPlugin, Logger, PlatformConfig, PlatformAccessory, Service, Characteristic } from 'homebridge';
+import { API, DynamicPlatformPlugin, Logger, PlatformConfig, PlatformAccessory } from 'homebridge';
 import fetch from 'node-fetch';
 
 const API_BASE_URL = 'https://api-v3.bepark.eu';
 
 export = (api: API) => {
   api.registerPlatform('BeParkGarageDoor', BeParkGarageDoor);
-}
+};
 
 class BeParkGarageDoor implements DynamicPlatformPlugin {
   private readonly log: Logger;
   private readonly config: PlatformConfig;
-  private readonly accessories: PlatformAccessory[] = [];
-  
+  private readonly accessories: PlatformAccessory[] = [];  
   private accessToken?: string;
   private refreshToken?: string;
   private tokenType?: string;
